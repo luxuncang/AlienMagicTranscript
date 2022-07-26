@@ -15,7 +15,7 @@ def defhook(astnode: ast.NodeVisitor, name: str):
             for n, line in enumerate(srclines): 
                 if f'@{name}' in line:
                     break
-            src = '\n'.join(srclines[n+1:])  
+            src = '\n'.join(srclines[n+1:]) # type: ignore
 
         if src.startswith((' ','\t')):
             src = 'if 1:\n' + src
